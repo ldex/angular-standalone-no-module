@@ -14,7 +14,7 @@ import { DemoWorkerComponent } from './shared/pages/demo-worker.component';
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch:'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
+  { path: 'products', loadChildren: () => import('./products/products-routing.module').then(m => m.ProductsRoutingModule)},
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent, canActivate: [LoginRouteGuardService] },

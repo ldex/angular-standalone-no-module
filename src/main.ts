@@ -1,7 +1,5 @@
 import { enableProdMode, ApplicationRef, importProvidersFrom } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { GetToken } from './app/app.module';
 import { environment, config } from './environments/environment';
 import { enableDebugTools, BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
@@ -15,7 +13,11 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NetworkStatusService } from './app/services/network-status.service';
 import { CartSubjectService } from './app/services/cart.subject.service';
-import { FavouriteService, LoginRouteGuardService, AuthService, AdminService, ErrorService, CartService, NotificationService, CanDeactivateGuardService, DialogService, LoadingDialogService, ErrorDialogService } from './app/services';
+import { FavouriteService, LoginRouteGuardService, AuthService, AdminService, ErrorService, CartService, NotificationService, CanDeactivateGuardService, DialogService, LoadingDialogService, ErrorDialogService, ProductService, ProductDetailResolveService } from './app/services';
+
+function GetToken(): string {
+    return localStorage.getItem(config.storageTokenKey);
+}
 
 const moduleServices = [
   FavouriteService,
@@ -30,7 +32,9 @@ const moduleServices = [
   DialogService,
   LoadingDialogService,
   ErrorDialogService,
-  NetworkStatusService
+  NetworkStatusService,
+  ProductService,
+  ProductDetailResolveService
 ]
 const moduleImports = [
     BrowserModule,
