@@ -2,11 +2,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/appnotification.interface';
 import { NotificationService } from 'src/app/services';
+import { NgIf } from '@angular/common';
 
-@Component( {
+@Component({
     selector: 'app-notification',
-    templateUrl: './notification.component.html'
-   } )
+    templateUrl: './notification.component.html',
+    standalone: true,
+    imports: [NgIf]
+})
    export class NotificationComponent implements OnInit, OnDestroy {
    
     notification: AppNotification;

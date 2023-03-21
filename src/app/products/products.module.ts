@@ -49,19 +49,17 @@ const moduleServices = [
 ]
 
 @NgModule({
-    declarations: [
+    imports: [
+        ...moduleImports,
         ...moduleComponents,
         ...moduleDirectives,
         ...modulePipes
-    ],
-    imports: [
-        ...moduleImports
     ],
     exports: [
         ...moduleExports
     ],
     providers: [
         ...moduleServices
-    ],
+    ]
 })
 export class ProductsModule { }

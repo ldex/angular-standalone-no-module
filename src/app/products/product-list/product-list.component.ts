@@ -5,7 +5,7 @@ import {
   OnInit,
   ViewEncapsulation
 } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import {
   Observable, combineLatest,
   map,
@@ -15,13 +15,17 @@ import {
   filter,
   shareReplay
 } from "rxjs";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { OrderBy } from "../orderBy.pipe";
+import { NgIf, NgFor, AsyncPipe, UpperCasePipe, JsonPipe, SlicePipe, CurrencyPipe } from "@angular/common";
 
 @Component({
-  selector: "app-product-list",
-  templateUrl: "./product-list.component.html",
-  styleUrls: ["./product-list.component.css"],
-  encapsulation: ViewEncapsulation.Emulated
+    selector: "app-product-list",
+    templateUrl: "./product-list.component.html",
+    styleUrls: ["./product-list.component.css"],
+    encapsulation: ViewEncapsulation.Emulated,
+    standalone: true,
+    imports: [NgIf, FormsModule, ReactiveFormsModule, NgFor, RouterLink, AsyncPipe, UpperCasePipe, JsonPipe, SlicePipe, CurrencyPipe, OrderBy]
 })
 export class ProductListComponent implements OnInit {
 

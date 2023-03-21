@@ -1,16 +1,12 @@
 import { Router, CanDeactivate } from '@angular/router';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  FormControl,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotificationService, DialogService } from '../../services';
 import { Observable, from } from 'rxjs';
 import { CustomValidators } from '../../customValidators';
 import { Product } from '../product.interface';
+import { NgIf } from '@angular/common';
 
 interface ProductForm {
   name: FormControl<string>;
@@ -23,9 +19,11 @@ interface ProductForm {
 }
 
 @Component({
-  selector: 'app-product-insert',
-  templateUrl: './product-insert.component.html',
-  styleUrls: ['./product-insert.component.css']
+    selector: 'app-product-insert',
+    templateUrl: './product-insert.component.html',
+    styleUrls: ['./product-insert.component.css'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, NgIf]
 })
 export class ProductInsertComponent implements CanDeactivate<any>, OnInit {
 

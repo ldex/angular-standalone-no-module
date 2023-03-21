@@ -4,12 +4,17 @@ import { Product } from './../product.interface';
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { config } from 'src/environments/environment';
+import { DefaultPipe } from '../default.pipe';
+import { ConfirmDirective } from '../confirm.directive';
+import { NgIf, AsyncPipe, UpperCasePipe, CurrencyPipe, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-product-detail',
+    templateUrl: './product-detail.component.html',
+    styleUrls: ['./product-detail.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, ConfirmDirective, AsyncPipe, UpperCasePipe, CurrencyPipe, DatePipe, DefaultPipe]
 })
 export class ProductDetailComponent implements OnInit {
 

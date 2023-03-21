@@ -25,27 +25,26 @@ const pagesComponents = [
 ];
 
 @NgModule({
-  declarations: [
-    ...pagesComponents,
-    LoadingDialogComponent,
-    ErrorDialogComponent,
-    NotificationComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MaterialModule,
-    FormsModule
-  ],
-  exports: [
-    ...pagesComponents,
-    LoadingDialogComponent,
-    ErrorDialogComponent,
-    NotificationComponent
-  ],
-  entryComponents: [
-    LoadingDialogComponent,
-    ErrorDialogComponent,
-    NotificationComponent]
+    imports: [
+        CommonModule,
+        RouterModule,
+        MaterialModule,
+        FormsModule,
+        ...pagesComponents,
+        LoadingDialogComponent,
+        ErrorDialogComponent,
+        NotificationComponent
+    ],
+    exports: [
+        ...pagesComponents,
+        LoadingDialogComponent,
+        ErrorDialogComponent,
+        NotificationComponent
+    ],
+    entryComponents: [
+        LoadingDialogComponent,
+        ErrorDialogComponent,
+        NotificationComponent
+    ]
 })
 export class SharedModule {}

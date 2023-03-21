@@ -1,9 +1,12 @@
 import { Component, HostBinding } from '@angular/core';
 import { fadeInAnimation } from 'src/app/animations';
+import { NgIf } from '@angular/common';
 
 @Component({
     templateUrl: './demo-worker.component.html',
-    animations: [fadeInAnimation]
+    animations: [fadeInAnimation],
+    standalone: true,
+    imports: [NgIf]
 })
 export class DemoWorkerComponent {
 
