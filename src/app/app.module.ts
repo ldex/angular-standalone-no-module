@@ -73,16 +73,4 @@ const moduleServices = [
   NetworkStatusService
 ]
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    ...moduleImports
-  ],
-  providers: [
-    ...moduleServices
-  ],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+
