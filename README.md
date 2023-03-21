@@ -1,4 +1,4 @@
-# Angular Academy Full Project
+# Angular Academy Full Project (Using Standalone Components and no Modules)
 
 Angular Reference Demo, a project from <a href="https://angular.ac" target="_blank">Angular Academy</a>.
 
