@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
-import { MaterialModule } from './material/material.module';
+
 
 import { JwtModule } from '@auth0/angular-jwt';
 
@@ -36,26 +36,25 @@ export function GetToken(): string {
 }
 
 const moduleImports = [
-  BrowserModule,
-  BrowserAnimationsModule,
-  FormsModule,
-  HttpClientModule,
-  JwtModule.forRoot({
-    config: {
-      tokenGetter: GetToken,
-      allowedDomains: ['localhost:10001', 'storerestservice.azurewebsites.net']
-    }
-  }),
-  AppRoutingModule,
-  MaterialModule,
-  SharedModule,
-  ErrorHandlerModule,
-  ServiceWorkerModule.register('ngsw-worker.js', {
-    enabled: environment.production,
-    // Register the ServiceWorker as soon as the app is stable
-    // or after 30 seconds (whichever comes first).
-    registrationStrategy: 'registerWhenStable:30000'
-  }),
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+        config: {
+            tokenGetter: GetToken,
+            allowedDomains: ['localhost:10001', 'storerestservice.azurewebsites.net']
+        }
+    }),
+    AppRoutingModule,
+    SharedModule,
+    ErrorHandlerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+        enabled: environment.production,
+        // Register the ServiceWorker as soon as the app is stable
+        // or after 30 seconds (whichever comes first).
+        registrationStrategy: 'registerWhenStable:30000'
+    })
 ]
 
 const moduleServices = [
