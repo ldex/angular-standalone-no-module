@@ -9,16 +9,10 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
 import { CanDeactivateGuardService } from '../services/can-deactivate-guard.service';
 import { ProductDetailResolveService } from '../services/product-details-resolve.service';
 
-const routes: Routes = [
+export const ProductsRoutes: Routes = [
   { path: '',       component: ProductListComponent },
   { path: 'insert', component: ProductInsertComponent, canDeactivate: [CanDeactivateGuardService] },
   { path: 'update/:id', component: ProductUpdateComponent, canDeactivate: [CanDeactivateGuardService], resolve: { product: ProductDetailResolveService } },
   { path: 'cart',   component: ProductCartComponent },
   { path: ':id',    component: ProductDetailComponent }
 ];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
-})
-export class ProductsRoutingModule { }
